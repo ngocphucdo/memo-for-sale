@@ -1,0 +1,22 @@
+<div class="container w-100 mt-2 mb-2">
+  <!-- Navigation Bar -->
+  {% include "itemdetail/navigation.html"  %}
+  <!-- Product detail -->
+  <div class="container w-100 g-white border border-danger rounded">
+    <div class="row">
+      <!-- Product Image -->
+      <div class="col mt-2 mb-2">
+      {% include "itemdetail/carousel.html" %}
+      <!-- Story -->
+      {% include "itemdetail/story.html" %}
+    </div>
+      <!-- Product Info -->
+      {% include "itemdetail/productinfo.html" %}
+      <div class="">
+        <!-- Comment -->
+        {% include "itemdetail/comment.html" %}
+      </div>
+
+    </div>
+  </div>
+</div>

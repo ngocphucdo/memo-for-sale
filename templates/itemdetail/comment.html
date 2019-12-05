@@ -1,0 +1,43 @@
+<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Say something Cool!</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="{{item.id}}_more-tab" data-toggle="pill" href="#{{item.id}}_more" role="tab" aria-controls="{{item.id}}_more" aria-selected="false">More...</a>
+  </li>
+</ul>
+<div class="tab-content" id="pills-tabContent">
+  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+    <div class="m-5">
+
+      <div class="input-group">
+
+          <form class="" method="POST">
+            <label class="font-pacifico">Comment</label>
+            <input class="border border-danger rounded" type="text" name="content-{{item.id}}" value="" placeholder="Say smth cool!"> 
+            <br>
+            <label class="font-pacifico"> Name </label>
+            <input class="border border-danger rounded" type="text" name="author-{{item.id}}" value="" placeholder="Nickname">
+
+
+
+            <!-- <textarea name="content" rows="4" cols="80"></textarea> -->
+            <button class="bg-danger text-white border border-danger rounded" type="submit" name="button" data-target='#{{item.id}}' value="{{item.id}}">Post</button>
+          </form>
+
+      </div>
+      {% for comment in item.comments %}
+      <div>
+        <span class="text-danger">"{{ comment.content }}"</span>
+        <span class="font-pacifico">{{ comment.author }}</span> said
+
+      </div>
+
+      {% endfor %}
+    </div>
+  </div>
+  <div class="tab-pane fade" id="{{item.id}}_more" role="tabpanel" aria-labelledby="{{item.id}}_more-tab">
+    {% include "itemdetail/random_items.html" %}
+  </div>
+</div>
+</div>
